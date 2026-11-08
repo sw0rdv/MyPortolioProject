@@ -1,0 +1,79 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/Layout/Index.cshtml";
+    int unread = Model.Count(x => !x.Isread);
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mesaj Kutusu</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            Gelen Mesajlar
+                            <span class="badge badge-danger ml-2">@unread okunmamış</span>
+                            <span class="badge badge-primary">@Model.Count toplam</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Sitenizden gelen mesajları buradan okuyabilir ve yönetebilirsiniz.
+                        </div>
+                        <table class="table table-hover mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderen</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr style="@(item.Isread ? "" : "font-weight:600; background:#fff8f8;")">
+                                        <td>@item.MessageId</td>
+                                        <td>
+                                            @item.NameSurname<br />
+                                            <small class="text-muted">@item.Email</small>
+                                        </td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.SendDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                        <td>
+                                            @if (item.Isread)
+                                            {
+                                                <span class="badge badge-success">Okundu</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger">Yeni</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="/Message/MessageDetails/@item.MessageId" class="btn btn-primary btn-sm">Oku</a>
+                                            @if(item.Isread==true)
+                                            {
+                                                <a href="/Message/ChangeReadStatusFalse/@item.MessageId" class="btn btn-dark btn-sm">Okunmadı Olarak İşaretle</a>
+                                            }
+                                            else
+                                            {
+                                                <a href="/Message/ChangeReadStatusTrue/@item.MessageId" class="btn btn-info btn-sm">Okundu Olarak İşaretle</a>
+                                            }
+                                            <a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger btn-sm"
+                                               onclick="return confirm('Bu mesaj silinsin mi?');">Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

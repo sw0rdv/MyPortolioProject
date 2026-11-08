@@ -1,0 +1,29 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Mesaj Detayı</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">@Model.Subject</div>
+                        <p class="card-category">
+                            @Model.NameSurname &lt;@Model.Email&gt; · @Model.SendDate.ToString("dd.MM.yyyy HH:mm")
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p style="white-space:pre-line;">@Model.MessageDetail</p>
+                        <hr />
+                        <a href="/Message/Inbox" class="btn btn-secondary">Geri Dön</a>
+                        <a href="/Message/ChangeReadStatusFalse/@Model.MessageId" class="btn btn-warning">Okunmadı Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

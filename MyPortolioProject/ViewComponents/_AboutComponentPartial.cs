@@ -11,6 +11,7 @@ namespace MyPortolioProject.ViewComponents
             ViewBag.AboutTitle = portfolioContext.Abouts.Select(x => x.Title).FirstOrDefault();
             ViewBag.AboutDescription = portfolioContext.Abouts.Select(x => x.SubDescription).FirstOrDefault();
             ViewBag.AboutDetails = portfolioContext.Abouts.Select(x => x.Details).FirstOrDefault();
+            ViewBag.AboutImageUrl = portfolioContext.Abouts.Select(x => x.ImageUrl).FirstOrDefault();
             return View();
         }
     }

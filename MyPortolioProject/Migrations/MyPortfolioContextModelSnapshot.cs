@@ -61,6 +61,10 @@ namespace MyPortolioProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SubDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -9,6 +9,9 @@ namespace MyPortolioProject.ViewComponents
         public IViewComponentResult Invoke()
         {
             var value = portfolioContext.Features.ToList();
+            ViewBag.HeroImageUrl = portfolioContext.Abouts
+                .Select(x => x.ImageUrl)
+                .FirstOrDefault();
             return View(value );
         }
     }

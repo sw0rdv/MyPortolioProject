@@ -14,6 +14,7 @@
     <div class="row about-content">
 
         <div class="col-six tab-full left">
+            <img src="@(string.IsNullOrWhiteSpace(ViewBag.AboutImageUrl) ? "https://i.ibb.co/tMm6BRHf/Whats-App-mage-2026-11-10-at-01-22-12.jpg" : ViewBag.AboutImageUrl)" alt="Hakkımda" style="width:100%; margin-bottom:2rem;">
             <h3>Ben Kimim?</h3>
 
             <p>@ViewBag.AboutDetails</p>

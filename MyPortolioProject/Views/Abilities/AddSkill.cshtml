@@ -1,0 +1,36 @@
+﻿@model MyPortolioProject.DAL.Entity.Skill
+@{
+    ViewData["Title"] = "Yeni Yetenek";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yetenekler</h4>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Yeni Yetenek Ekle</div>
+                    </div>
+                    <form method="post" asp-action="AddSkill">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="SkillTitle">Yetenek Adı</label>
+                                <input type="text" asp-for="SkillTitle" class="form-control" placeholder="Örn: ASP.NET Core" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Value">Seviye (%)</label>
+                                <input type="number" asp-for="Value" class="form-control" min="0" max="100" placeholder="0 - 100" />
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success"><i class="la la-check"></i> Kaydet</button>
+                            <a asp-action="Index" class="btn btn-danger"><i class="la la-times"></i> Vazgeç</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

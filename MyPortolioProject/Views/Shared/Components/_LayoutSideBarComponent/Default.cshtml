@@ -1,40 +1,40 @@
 ﻿<div class="sidebar">
-	<div class="scrollbar-inner sidebar-wrapper">
-		<div class="user">
-			<div class="photo">
-				<img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg">
-			</div>
-			<div class="info">
-				<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-					<span>
-						Özgür Nuri VURAL
-						<span class="user-level">Administrator</span>
-						<span class="caret"></span>
-					</span>
-				</a>
-				<div class="clearfix"></div>
+    <div class="scrollbar-inner sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="~/Ready-Bootstrap-Dashboard-master/assets/img/profile.jpg">
+            </div>
+            <div class="info">
+                <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                    <span>
+                        Özgür Nuri VURAL
+                        <span class="user-level">Administrator</span>
+                        <span class="caret"></span>
+                    </span>
+                </a>
+                <div class="clearfix"></div>
 
-				<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
-					<ul class="nav">
-						<li>
-							<a href="#profile">
-								<span class="link-collapse">Profilim</span>
-							</a>
-						</li>
-						<li>
-							<a href="#edit">
-								<span class="link-collapse">Şifre Değiştir</span>
-							</a>
-						</li>
-						<li>
-							<a href="#settings">
-								<span class="link-collapse">Ayarlar</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+                <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                    <ul class="nav">
+                        <li>
+                            <a href="#profile">
+                                <span class="link-collapse">Profilim</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#edit">
+                                <span class="link-collapse">Şifre Değiştir</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings">
+                                <span class="link-collapse">Ayarlar</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         @{
             var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
             Func<string, string> Active = name => currentController == name ? "active" : "";
@@ -49,7 +49,7 @@
             </li>
 
             <li class="nav-item @Active("About")">
-                <a href="/About/AboutList">
+                <a href="/About/Index">
                     <i class="la la-user"></i>
                     <p>Hakkımda</p>
                 </a>
@@ -60,14 +60,14 @@
                     <p>Deneyimler</p>
                 </a>
             </li>
-            <li class="nav-item @Active("Skill")">
-                <a href="/Skill/SkillList">
+            <li class="nav-item @Active("Abilities")">
+                <a href="/Abilities/Index">
                     <i class="la la-code"></i>
                     <p>Yetenekler</p>
                 </a>
             </li>
             <li class="nav-item @Active("Portfolio")">
-                <a href="/Portfolio/PortfolioList">
+                <a href="/Portfolio/Index">
                     <i class="la la-folder-open"></i>
                     <p>Portfolyo</p>
                 </a>
@@ -78,27 +78,14 @@
                     <p>Yapılacaklar</p>
                 </a>
             </li>
-            <li class="nav-item @Active("Feature")">
-                <a href="/Feature/FeatureList">
-                    <i class="la la-star"></i>
-                    <p>Öne Çıkan Alan</p>
-                </a>
-            </li>
-            <li class="nav-item @Active("Testimonial")">
-                <a href="/Testimonial/TestimonialList">
-                    <i class="la la-quote-left"></i>
-                    <p>Referanslar</p>
-                </a>
-            </li>
-
             <li class="nav-item @Active("Contact")">
-                <a href="/Contact/ContactList">
+                <a href="/Contact/Index">
                     <i class="la la-phone"></i>
                     <p>İletişim Bilgileri</p>
                 </a>
             </li>
             <li class="nav-item @Active("SocialMedia")">
-                <a href="/SocialMedia/SocialMediaList">
+                <a href="/SocialMedia/Index">
                     <i class="la la-share-alt"></i>
                     <p>Sosyal Medya</p>
                 </a>
@@ -123,5 +110,5 @@
                 </a>
             </li>
         </ul>
-	</div>
+    </div>
 </div>

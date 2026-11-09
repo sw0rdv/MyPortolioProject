@@ -54,7 +54,6 @@
     <None Include="wwwroot\hola-master\images\contact-bg.jpg" />
     <None Include="wwwroot\hola-master\images\count-bg.jpg" />
     <None Include="wwwroot\hola-master\images\hero-bg.jpg" />
-    <None Include="wwwroot\hola-master\images\logo.png" />
     <None Include="wwwroot\hola-master\images\photoswipe\default-skin.png" />
     <None Include="wwwroot\hola-master\images\photoswipe\default-skin.svg" />
     <None Include="wwwroot\hola-master\images\photoswipe\preloader.gif" />

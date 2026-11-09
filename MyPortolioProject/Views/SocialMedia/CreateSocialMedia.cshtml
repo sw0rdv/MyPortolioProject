@@ -1,0 +1,40 @@
+﻿@model MyPortolioProject.DAL.Entity.SocialMedia
+@{
+    ViewData["Title"] = "Sosyal Medya Ekle";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Sosyal Medya</h4>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Yeni Hesap Ekle</div>
+                    </div>
+                    <form method="post" asp-action="CreateSocialMedia">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label asp-for="Title">Platform Adı</label>
+                                <input type="text" asp-for="Title" class="form-control" placeholder="Örn: GitHub" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Url">Bağlantı</label>
+                                <input type="url" asp-for="Url" class="form-control" placeholder="https://github.com/kullaniciadi" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Icon">İkon Sınıfı</label>
+                                <input type="text" asp-for="Icon" class="form-control" placeholder="Örn: im im-github" />
+                                <small class="form-text text-muted">Kullanmak istediğiniz ikon sınıfını yazın. Örnek: im im-github, im im-linkedin, im im-instagram</small>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="btn btn-success"><i class="la la-check"></i> Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
